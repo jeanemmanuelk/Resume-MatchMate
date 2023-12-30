@@ -15,9 +15,12 @@ Welcome to Resume MatchMate, an innovative application designed to bridge the ga
 
 ## Installation
 To get started with Resume MatchMate:
-1. Clone the repository: `git clone https://github.com/jeanemmanuelk/Resume-MatchMate.git`
-2. Install dependencies: `pip install -r requirements.txt`
-3. Run the application: `python app.py`
+## Installation
+To get started with Resume MatchMate:
+1. Create and activate a python environment
+2. Clone the repository: `git clone https://github.com/jeanemmanuelk/Resume-MatchMate.git`
+3. Install dependencies: `pip install -r requirements.txt`
+4. Run the application: `python app.py`
 
 ## Usage
 Upload your resume in PDF format and paste the job description into the respective fields. Click "Find Match Rate" to see how well your resume aligns with the job description.
