@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume MatchMate</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Resume MatchMate</h1>
+    <p>Welcome to "Resume MatchMate" – your smart pathfinder in the job market. Here, we seamlessly connect your aspirations with the right opportunities. 
+        Let's embark on a journey to perfectly align your skills and experiences with your dream job! 
+    </p><br><br>
+    <form id="matchForm" enctype="multipart/form-data">
+        <label for="resume"><strong>Upload your resume:</strong></label>
+        <input type="file" name="resume" accept=".pdf" required><br><br>
+        
+        <label for="job_description"><strong>Paste the Job Description in the box below</strong></label><br>
+        
+        <textarea name="job_description" rows="10" cols="50" required></textarea><br><br>
+        
+        <input type="button" value="Find Match Rate" id="submitForm">
+    </form><br><br>
+
+    <div id="progressBarContainer" style="display: none;">
+        <label for="progressBar">Matching in Progress:</label>
+        <progress id="progressBar" value="0" max="100"></progress>
+    </div>
+
+    <div id="results" style="display: none;">
+        <h2>Resume Text:</h2>
+        <p id="resumeText"></p>
+        <h2>Job Description:</h2>
+        <p id="jobDescription"></p>
+        <h2>Match Rate:</h2>
+        <p id="matchRate"></p>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $('#submitForm').click(function(){
+                $('#progressBarContainer').show();
+                $('#progressBar').val(10); // Initial progress
+                
+                var formData = new FormData($('#matchForm')[0]);
+                $.ajax({
+                    url: '/',
+                    type: 'POST',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function(data){
+                        $('#progressBar').val(100); // Complete progress
+                        $('#resumeText').text(data.resume_text);
+                        $('#jobDescription').text(data.job_description);
+                        $('#matchRate').text(data.match_rate);
+                        $('#results').show();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
