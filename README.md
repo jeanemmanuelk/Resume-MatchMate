@@ -11,7 +11,7 @@ Welcome to Resume MatchMate, an innovative application designed to bridge the ga
 ## Technologies Used
 - Flask for web framework
 - BERT from Sentence Transformers for NLP tasks
-- PyPDF2 for PDF handling
+- PyPDF2 for PDF handling.
 
 ## Installation
 To get started with Resume MatchMate:
