@@ -26,7 +26,7 @@ To get started with Resume MatchMate:
 Upload your resume in PDF format and paste the job description into the respective fields. Click "Find Match Rate" to see how well your resume aligns with the job description.
 
 ## License
-This project is licensed under the [MIT License](LICENSE.md).
+This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 For any inquiries, please reach out to Jean-Emmanue Kouadio at emmanuelkj5@gmail.com .
