@@ -82,7 +82,7 @@ def index():
 
 def allowed_file(filename):
     # Enhanced file validation
-    return '.' in filename and filename.rsplit('.', 1)[1].lower() in {'pdf', 'other', 'file', 'extensions'}
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() == 'pdf'
 
 if __name__ == '__main__':
     app.run(debug=True)
