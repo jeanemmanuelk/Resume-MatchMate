@@ -1,20 +1,18 @@
 # Resume MatchMate
 
 ## Overview
-Welcome to Resume MatchMate, an innovative application designed to bridge the gap between job seekers and their ideal job roles. Utilizing advanced matching algorithms, Resume MatchMate aligns candidate resumes with the most fitting job descriptions, streamlining the job search and recruitment process.
+Resume MatchMate is a small Flask app that compares a resume (PDF) with a job description and gives a match percentage. It uses a Sentence-BERT model to turn both texts into embeddings and measures how similar they are.
 
 ## Features
-- **Resume Parsing**: Extracts key information from resumes for accurate matching.
-- **Job Description Analysis**: Analyzes job postings to identify essential qualifications and skills.
-- **Match Scoring**: Calculates a compatibility score between resumes and job descriptions.
+- **Resume text extraction**: Reads the text from an uploaded PDF resume.
+- **Semantic embeddings**: Splits each text into 500-character chunks, embeds them with a BERT-based Sentence Transformers model, and averages the chunk embeddings.
+- **Match score**: The match rate is the cosine similarity between the resume and job description embeddings, shown as a percentage.
 
 ## Technologies Used
 - Flask for web framework
 - BERT from Sentence Transformers for NLP tasks
 - PyPDF2 for PDF handling.
 
-## Installation
-To get started with Resume MatchMate:
 ## Installation
 To get started with Resume MatchMate:
 1. Create and activate a python environment
@@ -24,6 +22,10 @@ To get started with Resume MatchMate:
 
 ## Usage
 Upload your resume in PDF format and paste the job description into the respective fields. Click "Find Match Rate" to see how well your resume aligns with the job description.
+
+## Limitations
+- The score is a rough text-similarity number, not a prediction of whether you would get the job. It does not check specific skills or requirements.
+- Chunks are cut at fixed 500-character boundaries, which can split words and sentences.
 
 ## License
 This project is licensed under the [MIT License](LICENSE).
